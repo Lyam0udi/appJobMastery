@@ -1,9 +1,9 @@
-<!-- new-postulation.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create Postulation</title>
+    <title>Update Postulation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,9 +51,11 @@
     </style>
 </head>
 <body>
-    <h2>Create Postulation</h2>
+    <h2>Update Postulation</h2>
     
-    <form th:action="@{/postulation/create}" th:object="${postulation}" method="post">
+	<form th:action="@{/postulation/update}" method="post" th:object="${postulation}">
+        <input type="hidden" th:field="*{idPostulation}">
+        
         <label for="postulationName">Postulation Name:</label>
         <input type="text" id="postulationName" th:field="*{postulationName}" required>
         
@@ -74,10 +76,10 @@
         
         <label for="stage">Stage:</label>
         <select id="stage" th:field="*{stage}" required>
-		    <option value="To Apply">To Apply</option>
-		    <option value="Already Applied">Already Applied</option>
-		    <option value="Response Received">Response Received</option>
-		</select>
+            <option value="To Apply">To Apply</option>
+            <option value="Already Applied">Already Applied</option>
+            <option value="Response Received">Response Received</option>
+        </select>
         
         <label for="interviewPreparation">Interview Preparation:</label>
         <textarea id="interviewPreparation" th:field="*{interviewPreparation}" required></textarea>
@@ -87,7 +89,7 @@
         
         <!-- Add more fields as needed -->
         
-        <button type="submit">Create</button>
+        <button type="submit">Update</button>
     </form>
 </body>
 </html>

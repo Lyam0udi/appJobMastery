@@ -1,37 +1,49 @@
 <!-- postulation-list.html -->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Postulation List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Postulation List</h2>
-    
-    <table>
-        <tr>
-            <th>Postulation Name</th>
-            <th>Description</th>
-            <th>Postulation Date</th>
-            <th>Contact Person</th>
-            <th>Email</th>
-            <th>Company Description</th>
-            <th>Stage</th>
-            <th>Interview Preparation</th>
-            <th>Interview Date</th>
-        </tr>
-        <tr th:each="postulation : ${postulations}">
-            <td th:text="${postulation.postulationName}"></td>
-            <td th:text="${postulation.description}"></td>
-            <td th:text="${postulation.postulationDate}"></td>
-            <td th:text="${postulation.contactPerson}"></td>
-            <td th:text="${postulation.email}"></td>
-            <td th:text="${postulation.companyDescription}"></td>
-            <td th:text="${postulation.stage}"></td>
-            <td th:text="${postulation.interviewPreparation}"></td>
-            <td th:text="${postulation.interviewDate}"></td>
-        </tr>
-    </table>
+    <div class="container">
+        <h2>Postulation List</h2>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Postulation Name</th>
+                    <th>Description Offer</th>
+                    <th>Postulation Date</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>Company Description</th>
+                    <th>Stage</th>
+                    <th>Interview Preparation</th>
+                    <th>Interview Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="postulation : ${postulations}">
+                    <td th:text="${postulation.postulationName}"></td>
+                    <td th:text="${postulation.description}"></td>
+                    <td th:text="${postulation.postulationDate}"></td>
+                    <td th:text="${postulation.contactPerson}"></td>
+                    <td th:text="${postulation.email}"></td>
+                    <td th:text="${postulation.companyDescription}"></td>
+                    <td th:text="${postulation.stage}"></td>
+                    <td th:text="${postulation.interviewPreparation}"></td>
+                    <td th:text="${postulation.interviewDate}"></td>
+                    <td>
+    					<a th:href="@{/postulation/update/{id}(id=${postulation.idPostulation})}" class="btn btn-primary">Update</a>
+                        <a th:href="@{/postulation/delete/{id}(id=${postulation.idPostulation})}" class="btn btn-danger">Delete</a>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

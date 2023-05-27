@@ -31,13 +31,13 @@ public class Postulation {
     
     // getters and setters
 
-	public Long getIdPostulation() {
-		return idPostulation;
-	}
+    public Long getIdPostulation() {
+        return idPostulation;
+    }
 
-	public void setIdPostulation(Long idPostulation) {
-		this.idPostulation = idPostulation;
-	}
+    public void setIdPostulation(Long idPostulation) {
+        this.idPostulation = idPostulation;
+    }
 
 	public String getPostulationName() {
 		return postulationName;
