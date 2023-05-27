@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Company List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Company List</h2>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Phone Number</th>
+                    <th>Website</th>
+                    <th>Public Email</th>
+                    <th>Logo Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="company : ${companies}">
+                    <td th:text="${company.nameCompany}"></td>
+                    <td th:text="${company.adresseCompany}"></td>
+                    <td th:text="${company.cityCompany}"></td>
+                    <td th:text="${company.phoneCompany}"></td>
+                    <td th:text="${company.webSiteCompany}"></td>
+                    <td th:text="${company.publicEmail}"></td>
+                    <td th:text="${company.imageLogo}"></td>
+                    <td>
+                        <a th:href="@{/company/update/{id}(id=${company.idCompany})}" class="btn btn-primary">Update</a>
+                        <a th:href="@{/company/delete/{id}(id=${company.idCompany})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

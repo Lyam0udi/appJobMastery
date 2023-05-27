@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Company</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+        }
+        
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Update Company</h2>
+    
+    <form th:action="@{/company/update}" method="post" th:object="${company}">
+        <input type="hidden" th:field="*{idCompany}">
+        
+        <label for="nameCompany">Company Name:</label>
+        <input type="text" id="nameCompany" th:field="*{nameCompany}" required>
+        
+        <label for="adresseCompany">Address:</label>
+        <input type="text" id="adresseCompany" th:field="*{adresseCompany}" required>
+        
+        <label for="cityCompany">City:</label>
+        <input type="text" id="cityCompany" th:field="*{cityCompany}" required>
+        
+        <label for="phoneCompany">Phone Number:</label>
+        <input type="text" id="phoneCompany" th:field="*{phoneCompany}" required>
+        
+        <label for="webSiteCompany">Website:</label>
+        <input type="text" id="webSiteCompany" th:field="*{webSiteCompany}" required>
+        
+        <label for="publicEmail">Public Email:</label>
+        <input type="email" id="publicEmail" th:field="*{publicEmail}" required>
+        
+        <label for="imageLogo">Logo Image:</label>
+        <input type="text" id="imageLogo" th:field="*{imageLogo}" required>
+        
+        <!-- Add more fields as needed -->
+        
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

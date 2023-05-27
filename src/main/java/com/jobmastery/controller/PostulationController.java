@@ -26,7 +26,7 @@ public class PostulationController {
     public String displayPostulationForm(Model model) {
         Postulation postulation = new Postulation();
         model.addAttribute("postulation", postulation);
-        return "new-postulation";
+        return "postulation/new-postulation";
     }
 
     @PostMapping("/create")
@@ -39,7 +39,7 @@ public class PostulationController {
     public String displayPostulationList(Model model) {
         List<Postulation> postulations = postulationService.getAllPostulations();
         model.addAttribute("postulations", postulations);
-        return "postulation-list";
+        return "postulation/postulation-list";
     }
     
     @GetMapping("/delete/{id}")
@@ -52,7 +52,7 @@ public class PostulationController {
     public String displayUpdateForm(@PathVariable("id") Long id, Model model) {
         Postulation postulation = postulationService.getPostulationById(id);
         model.addAttribute("postulation", postulation);
-        return "update-postulation";
+        return "postulation/update-postulation";
 
     }
     
