@@ -1,93 +1,70 @@
 <!-- new-postulation.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Postulation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        
-        h2 {
-            margin-bottom: 20px;
-        }
-        
-        form {
-            width: 400px;
-            margin: 0 auto;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        
-        input[type="text"],
-        input[type="date"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        textarea {
-            height: 100px;
-        }
-        
-        button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+<head th:replace="navbar :: header">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<nav th:replace="navbar :: navbar"></nav>
 <body>
-    <h2>Create Postulation</h2>
-    
-    <form th:action="@{/postulation/create}" th:object="${postulation}" method="post">
-        <label for="postulationName">Postulation Name:</label>
-        <input type="text" id="postulationName" th:field="*{postulationName}" required>
-        
-        <label for="description">Description of the Offer:</label>
-        <textarea id="description" th:field="*{description}" required></textarea>
-        
-        <label for="postulationDate">Postulation Date:</label>
-        <input type="date" id="postulationDate" th:field="*{postulationDate}" required>
-        
-        <label for="contactPerson">Contact Person:</label>
-        <input type="text" id="contactPerson" th:field="*{contactPerson}" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" th:field="*{email}" required>
-        
-        <label for="companyDescription">Company Description:</label>
-        <textarea id="companyDescription" th:field="*{companyDescription}" required></textarea>
-        
-        <label for="stage">Stage:</label>
-        <select id="stage" th:field="*{stage}" required>
-		    <option value="To Apply">To Apply</option>
-		    <option value="Already Applied">Already Applied</option>
-		    <option value="Response Received">Response Received</option>
-		</select>
-        
-        <label for="interviewPreparation">Interview Preparation:</label>
-        <textarea id="interviewPreparation" th:field="*{interviewPreparation}" required></textarea>
-        
-        <label for="interviewDate">Interview Date:</label>
-        <input type="date" id="interviewDate" th:field="*{interviewDate}" required>
-        
-        <!-- Add more fields as needed -->
-        
-        <button type="submit">Create</button>
-    </form>
+    <div class="container">
+        <h2>Create Postulation</h2>
+
+        <form th:action="@{/postulation/create}" th:object="${postulation}" method="post">
+            <div class="form-group">
+                <label for="postulationName">Postulation Name:</label>
+                <input type="text" id="postulationName" class="form-control" th:field="*{postulationName}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description of the Offer:</label>
+                <textarea id="description" class="form-control" th:field="*{description}" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="postulationDate">Postulation Date:</label>
+                <input type="date" id="postulationDate" class="form-control" th:field="*{postulationDate}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactPerson">Contact Person:</label>
+                <input type="text" id="contactPerson" class="form-control" th:field="*{contactPerson}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" th:field="*{email}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="companyDescription">Company Description:</label>
+                <textarea id="companyDescription" class="form-control" th:field="*{companyDescription}" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="stage">Stage:</label>
+                <select id="stage" class="form-control" th:field="*{stage}" required>
+                    <option value="To Apply">To Apply</option>
+                    <option value="Already Applied">Already Applied</option>
+                    <option value="Response Received">Response Received</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="interviewPreparation">Interview Preparation:</label>
+                <textarea id="interviewPreparation" class="form-control" th:field="*{interviewPreparation}" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="interviewDate">Interview Date:</label>
+                <input type="date" id="interviewDate" class="form-control" th:field="*{interviewDate}" required>
+            </div>
+
+            <!-- Add more fields as needed -->
+
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

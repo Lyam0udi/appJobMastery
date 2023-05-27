@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Company {
@@ -24,7 +25,8 @@ public class Company {
     
     private String publicEmail;
     
-    private String imageLogo;
+    @Lob
+    private byte[] imageLogo;
     
     // empty constructor 
     
@@ -33,8 +35,7 @@ public class Company {
     }
     
     // Getters, setters,
-
-	public Long getIdCompany() {
+    public Long getIdCompany() {
 		return idCompany;
 	}
 
@@ -90,18 +91,17 @@ public class Company {
 		this.publicEmail = publicEmail;
 	}
 
-	public String getImageLogo() {
+	public byte[] getImageLogo() {
 		return imageLogo;
 	}
 
-	public void setImageLogo(String imageLogo) {
+	public void setImageLogo(byte[] imageLogo) {
 		this.imageLogo = imageLogo;
 	}
 
 	// constructors using fields 
-	
 	public Company(String nameCompany, String adresseCompany, String cityCompany, String phoneCompany,
-			String webSiteCompany, String publicEmail, String imageLogo) {
+			String webSiteCompany, String publicEmail, byte[] imageLogo) {
 		super();
 		this.nameCompany = nameCompany;
 		this.adresseCompany = adresseCompany;
@@ -111,4 +111,5 @@ public class Company {
 		this.publicEmail = publicEmail;
 		this.imageLogo = imageLogo;
 	} 
+
 }
