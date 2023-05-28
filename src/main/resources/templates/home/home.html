@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="navbar :: header"></head>
+<head th:replace="navbar :: header">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/css/formatting.css}">
+</head>
 
 <body>
 	<div th:replace="navbar :: navbar"></div>
     <div class="container">
-        <h1>Job Mastery - Organizing Your Job Search</h1>
+        <h2 class="mt-4">Welcome to JobMastery</h2>
+        
         <p>
-            <em>L'écran se lève, révélant une personne debout au centre de la scène, prête à se lancer dans sa quête d'emploi. Une musique dramatique donne le ton à sa quête d'organisation.</em>
+            JobMastery is a comprehensive platform designed to revolutionize the way job seekers and employers connect. Whether you're a skilled professional seeking new career opportunities or a company looking for the perfect candidate, JobMastery is here to make your job search or hiring process effortless and efficient.
         </p>
-        <hr>
-
-        <h2>Acte 1 : Le Prélude - Auto-évaluation</h2>
-        <p>Rassemblez vos pensées, ô Chercheur d'emploi, et faites une introspection. Définissez vos objectifs professionnels, vos forces et vos passions. Évaluez vos compétences, vos expériences et les domaines dans lesquels vous souhaitez vous développer. Cette prise de conscience guidera votre chemin.</p>
-
-        <h2>Acte 2 : L'Appel à Candidatures - Recherche</h2>
-        <p>Entamez une grande exploration du marché de l'emploi. Plongez dans l'univers des entreprises et des secteurs. Étudiez leurs cultures, leurs valeurs et leurs missions. Recherchez des postes qui correspondent à vos aspirations et établissez une liste d'employeurs potentiels.</p>
-
-        <h2>Acte 3 : Le Portfolio - CV et Lettres de Motivation</h2>
-        <p>Créez un chef-d'œuvre pour captiver le cœur des recruteurs. Réalisez un CV éclatant, mettant en valeur vos réalisations et compétences. Rédigez des lettres de motivation convaincantes, adaptées à chaque candidature, mettant en avant votre passion et votre adéquation.</p>
-
-        <h2>Acte 4 : La Scène - Présence en ligne</h2>
-        <p>Préparez votre scène virtuelle, ô Chercheur d'emploi. Peaufinez votre profil LinkedIn, veillant à ce qu'il reflète votre expertise professionnelle. Soignez votre présence sur les réseaux sociaux, car les yeux des employeurs potentiels pourraient être rivés sur vous. Laissez briller votre empreinte numérique avec authenticité et professionnalisme.</p>
-
-        <h2>Acte 5 : Les Auditions - Candidatures</h2>
-        <p>Prenez place au centre de la scène et soumettez vos candidatures avec ferveur. Organisez vos documents méticuleusement, en suivant les délais, l'état d'avancement des candidatures et les contacts des entreprises. Tenez un registre de la progression de chaque candidature, car le spectacle doit continuer !</p>
-
-        <h2>Acte 6 : Le Rideau se Lève - Réseautage</h2>
-        <p>Dansez la danse de la connexion, ô Chercheur d'emploi. Participez à des salons de l'emploi, à des événements sectoriels et à des sessions de réseautage virtuelles. Établissez des relations avec des professionnels de votre domaine d'intérêt. Cherchez des mentors et saisissez les occasions de démontrer votre valeur.</p>
-
-        <h2>Acte 7 : Les Rappels - Entretiens</h2>
-        <p>Préparez-vous pour le grand spectacle des entretiens. Renseignez-vous sur les entreprises, anticipez les questions potentielles et répétez vos réponses. Habillez-vous en conséquence, dégageant confiance et charisme. Laissez une impression durable, car cet acte pourrait donner lieu à un bis.</p>
-
-        <h2>Acte 8 : Le Dénouement - Suivi</h2>
-        <p>Le rideau tombe, mais la représentation continue. Envoyez des notes de remerciement empreintes de gratitude à ceux qui vous ont accordé leur temps. Exprimez votre appréciation pour l'opportunité qui vous a été offerte. Restez persévérant, suivez les candidatures et maintenez un comportement professionnel.</p>
-
-        <h2>Épilogue : Le Bis - Réflexion et Adaptation</h2>
-        <p>Alors que le dernier acte se conclut, réfléchissez à votre parcours. Adaptez vos stratégies en fonction des leçons apprises. Célébrez les succès et embrassez les enseignements tirés des revers. La quête du rôle idéal peut nécessiter plusieurs actes, mais la persévérance vous mènera vers le succès.</p>
-
-        <hr>
-
+        
+        <h3>Purpose</h3>
+        
         <p>
-            <em>Le rideau se ferme, laissant le chercheur d'emploi inspiré et prêt à entreprendre sa quête d'emploi organisée.</em>
+            At JobMastery, we understand the challenges job seekers face in finding the right job that matches their skills, localization, and domain. Likewise, we recognize the difficulties employers encounter in identifying top talent within their industry. With this in mind, JobMastery was created with four key purposes:
+        </p>
+        
+        <ol>
+            <li>
+                <strong>Empowering Job Seekers:</strong> We believe in empowering job seekers with the tools they need to succeed in their job search. Through our advanced search functionality, individuals can easily explore a vast array of job opportunities tailored to their specific requirements. Whether you're a seasoned professional or just starting your career journey, JobMastery provides the resources and guidance you need to find your dream job.
+            </li>
+            <li>
+                <strong>Streamlining Time Management:</strong> Finding a job can be a time-consuming process, requiring careful organization and management. JobMastery simplifies this process by offering a personalized dashboard where users can efficiently track their applications, set reminders for important deadlines, and stay organized throughout their job search. Our platform ensures that you never miss an opportunity or lose track of your progress.
+            </li>
+            <li>
+                <strong>Enabling Seamless Recruitment:</strong> We understand that employers face the challenge of finding the perfect fit for their organizations. With JobMastery, companies can access a pool of highly skilled candidates whose profiles align with their specific requirements. Our intelligent matching algorithm considers skills, experience, and domain expertise to connect employers with the most qualified individuals. Save time and resources by easily shortlisting and engaging with potential candidates through our user-friendly interface.
+            </li>
+            <li>
+                <strong>Simplifying Application and Interview Process:</strong> JobMastery aims to simplify the application and interview process for both job seekers and employers. We provide a seamless and user-friendly application submission feature, allowing candidates to apply for jobs effortlessly. Additionally, our platform facilitates easy interview scheduling, ensuring smooth communication and coordination between employers and job seekers.
+            </li>
+        </ol>
+        
+        <p>
+            Discover the next level of job search and recruitment with JobMastery. Take advantage of our innovative features, expert guidance, and extensive network to unlock your professional potential or find exceptional talent for your organization. Join us today and experience a smarter, more efficient approach to job mastery.
+        </p>
+        
+        <p>
+            Start your journey with JobMastery and let us help you achieve your career aspirations or find the ideal candidate for your company. Together, we'll make your job search or recruitment process a resounding success.
         </p>
     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHq1dM8jyU6t04T0z0PnW1qp0Ui+Gkt/zC6gg7o6gVx8b0N27p1ck+Lq" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUc8vEFsMq0sV+0OqnmEYNt8mBjPhrl+s+XuFaaD5GDK6" crossorigin="anonymous"></script>
 </body>
 </html>

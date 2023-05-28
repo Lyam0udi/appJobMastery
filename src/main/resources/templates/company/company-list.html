@@ -29,8 +29,6 @@
                     <td th:text="${company.publicEmail}"></td>
                     <td>
                         <img th:src="@{'data:image/jpeg;base64,' + T(org.apache.commons.codec.binary.Base64).encodeBase64String(company.imageLogo)}" alt="Company Logo" width="50" height="50" />
-
-
                     </td>
                     <td>
                         <a th:href="@{/company/update/{id}(id=${company.idCompany})}" class="btn btn-primary">Update</a>
