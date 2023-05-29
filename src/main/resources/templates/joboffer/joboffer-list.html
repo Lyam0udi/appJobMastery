@@ -1,0 +1,31 @@
+<!-- joboffer-list.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="navbar :: header"></head>
+    <nav th:replace="navbar :: navbar"></nav>
+<body>
+    <div class="container">
+        <h2>Job Offer List</h2>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Job Offer Name</th>
+                    <th>Description Offer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="jobOffer : ${jobOffers}">
+                    <td th:text="${jobOffer.nameJobOffer}"></td>
+                    <td th:text="${jobOffer.descriptionJobOffer}"></td>
+                    <td>
+                        <a th:href="@{/joboffer/update/{id}(id=${jobOffer.idJobOffer})}" class="btn btn-primary">Update</a>
+                        <a th:href="@{/joboffer/delete/{id}(id=${jobOffer.idJobOffer})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
