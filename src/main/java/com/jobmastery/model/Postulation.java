@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Postulation {
@@ -24,12 +26,16 @@ public class Postulation {
     private String interviewPreparation;
     private LocalDate interviewDate;
     
-    // empty constructor
+    @ManyToOne
+    @JoinColumn(name = "job_offer_id")
+    private JobOffer jobOffer;
+    
+    // Empty constructor
     public Postulation() {
     	
     }
     
-    // getters and setters
+    // Getters and setters
 
     public Long getIdPostulation() {
         return idPostulation;
@@ -39,95 +45,100 @@ public class Postulation {
         this.idPostulation = idPostulation;
     }
 
-	public String getPostulationName() {
-		return postulationName;
-	}
+    public String getPostulationName() {
+        return postulationName;
+    }
 
-	public void setPostulationName(String postulationName) {
-		this.postulationName = postulationName;
-	}
+    public void setPostulationName(String postulationName) {
+        this.postulationName = postulationName;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public LocalDate getPostulationDate() {
-		return postulationDate;
-	}
+    public LocalDate getPostulationDate() {
+        return postulationDate;
+    }
 
-	public void setPostulationDate(LocalDate postulationDate) {
-		this.postulationDate = postulationDate;
-	}
+    public void setPostulationDate(LocalDate postulationDate) {
+        this.postulationDate = postulationDate;
+    }
 
-	public String getContactPerson() {
-		return contactPerson;
-	}
+    public String getContactPerson() {
+        return contactPerson;
+    }
 
-	public void setContactPerson(String contactPerson) {
-		this.contactPerson = contactPerson;
-	}
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getCompanyDescription() {
-		return companyDescription;
-	}
+    public String getCompanyDescription() {
+        return companyDescription;
+    }
 
-	public void setCompanyDescription(String companyDescription) {
-		this.companyDescription = companyDescription;
-	}
+    public void setCompanyDescription(String companyDescription) {
+        this.companyDescription = companyDescription;
+    }
 
-	public String getStage() {
-		return stage;
-	}
+    public String getStage() {
+        return stage;
+    }
 
-	public void setStage(String stage) {
-		this.stage = stage;
-	}
+    public void setStage(String stage) {
+        this.stage = stage;
+    }
 
-	public String getInterviewPreparation() {
-		return interviewPreparation;
-	}
+    public String getInterviewPreparation() {
+        return interviewPreparation;
+    }
 
-	public void setInterviewPreparation(String interviewPreparation) {
-		this.interviewPreparation = interviewPreparation;
-	}
+    public void setInterviewPreparation(String interviewPreparation) {
+        this.interviewPreparation = interviewPreparation;
+    }
 
-	public LocalDate getInterviewDate() {
-		return interviewDate;
-	}
+    public LocalDate getInterviewDate() {
+        return interviewDate;
+    }
 
-	public void setInterviewDate(LocalDate interviewDate) {
-		this.interviewDate = interviewDate;
-	}
-	
+    public void setInterviewDate(LocalDate interviewDate) {
+        this.interviewDate = interviewDate;
+    }
+
+    public JobOffer getJobOffer() {
+        return jobOffer;
+    }
+
+    public void setJobOffer(JobOffer jobOffer) {
+        this.jobOffer = jobOffer;
+    }
     
-    // constructor using fields
+    // Constructor using fields
 
-	public Postulation(String postulationName, String description, LocalDate postulationDate, String contactPerson,
-			String email, String companyDescription, String stage, String interviewPreparation,
-			LocalDate interviewDate) {
-		super();
-		this.postulationName = postulationName;
-		this.description = description;
-		this.postulationDate = postulationDate;
-		this.contactPerson = contactPerson;
-		this.email = email;
-		this.companyDescription = companyDescription;
-		this.stage = stage;
-		this.interviewPreparation = interviewPreparation;
-		this.interviewDate = interviewDate;
-	}
-
-    
+    public Postulation(String postulationName, String description, LocalDate postulationDate, String contactPerson,
+            String email, String companyDescription, String stage, String interviewPreparation,
+            LocalDate interviewDate) {
+        this.postulationName = postulationName;
+        this.description = description;
+        this.postulationDate = postulationDate;
+        this.contactPerson = contactPerson;
+        this.email = email;
+        this.companyDescription = companyDescription;
+        this.stage = stage;
+        this.interviewPreparation = interviewPreparation;
+        this.interviewDate = interviewDate;
+    }
 }
+

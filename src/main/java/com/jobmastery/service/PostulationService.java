@@ -10,32 +10,31 @@ import com.jobmastery.repository.IPostulationRepository;
 
 @Service
 public class PostulationService {
-	
-	private final IPostulationRepository postulationRepository;
+
+    private final IPostulationRepository postulationRepository;
 
     @Autowired
     public PostulationService(IPostulationRepository postulationRepository) {
         this.postulationRepository = postulationRepository;
     }
 
-
     public void createPostulation(Postulation postulation) {
         postulationRepository.save(postulation);
     }
-    
+
     public List<Postulation> getAllPostulations() {
         return postulationRepository.findAll();
     }
-    
+
     public void deletePostulationById(Long id) {
         postulationRepository.deleteById(id);
     }
-    
+
     public Postulation getPostulationById(Long id) {
         return postulationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid postulation id: " + id));
     }
-    
+
     public void updatePostulation(Postulation postulation) {
         // Retrieve the existing postulation from the database
         Postulation existingPostulation = postulationRepository.findById(postulation.getIdPostulation())
@@ -56,5 +55,5 @@ public class PostulationService {
         // Save the updated postulation in the database
         postulationRepository.save(existingPostulation);
     }
-
 }
+

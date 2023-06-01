@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.jobmastery.model.JobOffer;
 import com.jobmastery.repository.IJobOfferRepository;
 
 @Service
 public class JobOfferService {
-	
-	private final IJobOfferRepository jobOfferRepository;
+
+    private final IJobOfferRepository jobOfferRepository;
 
     @Autowired
     public JobOfferService(IJobOfferRepository jobOfferRepository) {
@@ -20,20 +21,20 @@ public class JobOfferService {
     public void createJobOffer(JobOffer jobOffer) {
         jobOfferRepository.save(jobOffer);
     }
-    
+
     public List<JobOffer> getAllJobOffers() {
         return jobOfferRepository.findAll();
     }
-    
+
     public void deleteJobOfferById(Long id) {
         jobOfferRepository.deleteById(id);
     }
-    
+
     public JobOffer getJobOfferById(Long id) {
         return jobOfferRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid job offer id: " + id));
     }
-    
+
     public void updateJobOffer(JobOffer jobOffer) {
         // Retrieve the existing job offer from the database
         JobOffer existingJobOffer = jobOfferRepository.findById(jobOffer.getIdJobOffer())
@@ -48,4 +49,5 @@ public class JobOfferService {
         jobOfferRepository.save(existingJobOffer);
     }
 }
+
 
